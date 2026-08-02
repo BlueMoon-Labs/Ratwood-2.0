@@ -1250,7 +1250,7 @@
 	if(!surname || !length(trim(surname)))
 		surname = thegroom.dna.species.random_surname()
 
-	priority_announce("[thegroom.real_name] and [thebride.real_name] have been wed beneath the Treefather's boughs!", title = "Nature's Union!", sound = 'sound/misc/bell.ogg')
+	priority_announce("[thegroom.real_name] и [thebride.real_name] обвенчались под ветвями Древоотца!", title = "Союз природы!", sound = 'sound/misc/bell.ogg')
 
 	var/list/titles = list("Sir", "Ser", "Dame", "Lord", "Lady", "Knight-Captain", "Duke", "Duchess", "Father", "Mother", "Brother", "Sister", "Prelate", "Devotee", "Votary")
 

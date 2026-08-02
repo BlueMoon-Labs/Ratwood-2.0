@@ -624,13 +624,13 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	return TRUE
 
 /mob/living/proc/get_key(message)
-	var/key = copytext(message, 1, 2)
+	var/key = copytext_char(message, 1, 2)
 	if(key in GLOB.department_radio_prefixes)
-		return LOWER_TEXT(copytext(message, 2, 3))
+		return LOWER_TEXT(copytext_char(message, 2, 3))
 
 /mob/living/proc/get_message_language(message)
-	if(copytext(message, 1, 2) == ",")
-		var/key = copytext(message, 2, 3)
+	if(copytext_char(message, 1, 2) == ",")
+		var/key = copytext_char(message, 2, 3)
 		for(var/ld in GLOB.all_languages)
 			var/datum/language/LD = ld
 			if(initial(LD.key) == key)

@@ -587,6 +587,9 @@ GLOBAL_VAR(restart_counter)
 	)
 
 /world/proc/TgsAnnounceRoundEnd()
+	if(redmoon_roundspoke_send_round_end())
+		return
+
 	if(!TgsAvailable())
 		return
 

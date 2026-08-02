@@ -1514,7 +1514,7 @@
 							var/surname = input(user, "Enter a surname for the couple:", "Marriage Ceremony") as text|null
 							if(!surname || !length(trim(surname)))
 								surname = thegroom.dna.species.random_surname()
-							priority_announce("[thegroom.real_name] has married [thebride.real_name]!", title = "Holy Union!", sound = 'sound/misc/bell.ogg')
+							priority_announce("[thegroom.real_name] женился на [thebride.real_name]!", title = "Священный союз!", sound = 'sound/misc/bell.ogg')
 							var/list/titles = list("Sir", "Ser", "Dame", "Lord", "Lady", "Knight-Captain", "Duke", "Duchess", "Father", "Mother", "Brother", "Sister", "Prelate", "Devotee", "Votary")
 							// Assign surname to groom
 							var/list/groom_name_parts = splittext(thegroom.real_name, " ")

@@ -3,8 +3,8 @@
  */
 
 /// Since duke/steward have different announcements
-/datum/taxsetter/var/good_announcement_text = "The Generous Lord Decrees"
-/datum/taxsetter/var/bad_announcement_text = "The Tyrannical Lord Dictates"
+/datum/taxsetter/var/good_announcement_text = "Милостивый правитель издаёт указ"
+/datum/taxsetter/var/bad_announcement_text = "Тиранический правитель диктует волю"
 
 /datum/taxsetter/New(good_announcement_text = null, bad_announcement_text = null)
 	. = ..()

@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 	if(!challenger)
 		return
 
-	priority_announce("[challenger.name] challenges Astrata's leadership! The outcome of this conflict will be decided in less than 2 daes by a sheer number of their alive supporters. [challenger.name] promises great rewards to the faithful if victorious, while Astrata swears revenge to any who dare to defy her. Choose your side, or stand aside...", "Schism within the Ten", 'sound/magic/marked.ogg')
+	priority_announce("[challenger.name] бросает вызов власти Астратры! Исход этого конфликта будет решён менее чем за два дня числом живых сторонников. [challenger.name] обещает щедрую награду верным в случае победы, а Астратра клянётся отомстить всем, кто осмелится противостоять ей. Выберите сторону или останьтесь в стороне...", "Раскол среди Десяти", 'sound/magic/marked.ogg')
 	for(var/mob/living/carbon/human/H in GLOB.human_list)
 		setup_mob(H)
 
@@ -72,7 +72,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 			challenger_count++
 
 	if(astrata_count >= challenger_count)
-		priority_announce("Astrata's light prevails over the challenge of [challenger.name]! The Sun Queen confirms her status as a true heir of Psydon!", "Astrata is VICTORIOUS!", 'sound/magic/ahh2.ogg')
+		priority_announce("Свет Астратры одерживает верх над вызовом [challenger.name]! Королева Солнца подтверждает свой статус истинной наследницы Псидона!", "Астратра ПОБЕДИЛА!", 'sound/magic/ahh2.ogg')
 		adjust_storyteller_influence("Astrata", 200)
 		adjust_storyteller_influence(challenger.name, -50)
 
@@ -98,7 +98,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 		cleanup_schism()
 
 	else if(challenger_count > astrata_count)
-		priority_announce("[challenger.name]'s challenge succeeds against Astrata's tyranny! The Sun Queen is grudgingly forced to share power with [challenger.name]...", "[challenger.name] RULES!", 'sound/magic/inspire_02.ogg')
+		priority_announce("Вызов [challenger.name] увенчался успехом против тирании Астратры! Королева Солнца неохотно вынуждена разделить власть с [challenger.name]...", "[challenger.name] ПРАВИТ!", 'sound/magic/inspire_02.ogg')
 		adjust_storyteller_influence(challenger.name, 200)
 		adjust_storyteller_influence("Astrata", -50)
 
@@ -132,7 +132,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 		addtimer(CALLBACK(src, PROC_REF(select_and_announce_vice_priest), challenger), 30 SECONDS)
 
 /datum/tennite_schism/proc/astrata_scorn()
-		priority_announce("You don't deserve my holy light, you ungrateful swines!", "Astrata's Scorn", 'sound/magic/fireball.ogg')
+		priority_announce("Вы не заслуживаете моего святого света, неблагодарные свиньи!", "Гнев Астратры", 'sound/magic/fireball.ogg')
 		GLOB.todoverride = "night"
 		settod()
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(reset_tod_override)), 20 MINUTES)
@@ -172,7 +172,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 		//selected_priest.verbs |= /mob/living/carbon/human/proc/churchcurse	- Add this back seperate later in a seperate PR. Good feature, PR too big tho.
 		selected_priest.verbs |= /mob/living/carbon/human/proc/churchannouncement
 
-		priority_announce("[challenger.name] has selected [selected_priest.real_name] as a new Bishop! Power sharing begins!", "Bishop rises", 'sound/magic/inspire_02.ogg')
+		priority_announce("[challenger.name] назначил [selected_priest.real_name] новым епископом! Начинается разделение власти!", "Восходит епископ", 'sound/magic/inspire_02.ogg')
 
 		if(was_supporter)
 			to_chat(selected_priest, span_green("[challenger.name] smiles upon you! Your faithful support during the schism has been rewarded with the position of a Vice Bishop!"))
@@ -214,9 +214,9 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 			challenger_count++
 
 	if(astrata_count >= challenger_count)
-		priority_announce("Astrata is leading in the schism! She will have her revenge soon enough...", "Schism Rages On", 'sound/magic/marked.ogg')
+		priority_announce("Астратра лидирует в расколе! Скоро она отомстит...", "Раскол продолжается", 'sound/magic/marked.ogg')
 	else if(challenger_count > astrata_count)
-		priority_announce("[challenger.name] is leading in the schism! Astrata will soon be forced to yield...", "Schism Rages On", 'sound/magic/marked.ogg')
+		priority_announce("[challenger.name] лидирует в расколе! Астратре скоро придётся уступить...", "Раскол продолжается", 'sound/magic/marked.ogg')
 
 	halfway_passed = TRUE
 

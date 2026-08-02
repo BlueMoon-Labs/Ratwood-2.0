@@ -215,30 +215,11 @@
 	standard_reboot()
 
 /datum/controller/subsystem/ticker/proc/get_end_reason()
-	var/end_reason
-
-	if(!check_for_lord())
-		end_reason = pick("Without a Duke, they were doomed to become slaves of Zizo.",
-						"Without a Duke, they were doomed to be eaten by nite creachers.",
-						"Without a Duke, they were doomed to become victims of Gehenna.",
-						"Without a Duke, they were doomed to enjoy a mass-suicide.",
-						"Without a Duke, the Lich made them his playthings.",
-						"Without a Duke, some jealous rival reigned in tyranny.",
-						"Without a Duke, the town was abandoned.")
-
-	if(vampire_werewolf() == "vampire")
-		end_reason = "When the Vampires finished sucking the town dry, they moved on to the next one."
-	if(vampire_werewolf() == "werewolf")
-		end_reason = "The Werevolves formed an unholy clan, marauding Ratwood Keep until the end of its daes."
-
-	if(SSmapping.retainer.head_rebel_decree)
-		end_reason = "The peasant rebels took control of the throne, hail the new community!"
-
-
+	var/end_reason = get_round_end_reason()
 	if(end_reason)
 		to_chat(world, span_bigbold("[end_reason]."))
 	else
-		to_chat(world, span_bigbold("The town has managed to survive another week."))
+		to_chat(world, span_bigbold("[SSmapping.current_map?.map_name || SSticker.realm_name || "Поселение"] пережило ещё одну неделю."))
 
 /datum/controller/subsystem/ticker/proc/gamemode_report()
 	var/list/all_teams = list()

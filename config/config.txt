@@ -485,6 +485,14 @@ MINUTE_CLICK_LIMIT 400
 
 #CHANNEL_ANNOUNCE_NEW_GAME_MESSAGE A new round is beggining!!
 
+## Rich Discord embeds for round start/end via TGS (Redmoon roundspoke)
+## Requires ROUNDSPOKE_CHANNEL_TAG (or CHAT_ANNOUNCE_NEW_GAME) to match a TGS channel tag
+#ROUNDSPOKE
+#ROUNDSPOKE_CHANNEL_TAG status
+#ROUNDSPOKE_DISCORD_ROLE
+#ROUNDSPOKE_JOIN_URL
+#ROUNDSPOKE_MEDIA_FILE config/discord_videos.json
+
 ## Allow admin hrefs that don't use the new token system, will eventually be removed
 DEBUG_ADMIN_HREFS
 

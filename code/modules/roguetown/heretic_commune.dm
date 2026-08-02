@@ -229,7 +229,7 @@
 	var/datum/round_event_control/rogue/R = new()
 	if(prob(30))
 		R.badomen(chosen_omen)
-		priority_announce("Heretics [first_chanter.real_name] and [second_chanter.real_name] have performed a dark ritual in [A]!", "Bad Omen", 'sound/misc/evilevent.ogg')
+		priority_announce("Еретики [first_chanter.real_name] и [second_chanter.real_name] совершили тёмный ритуал в [A]!", "Дурное предзнаменование", 'sound/misc/evilevent.ogg')
 	else
 		R.badomen(chosen_omen)
 		priority_announce("A dark ritual has been performed in [A]!", "Bad Omen", 'sound/misc/evilevent.ogg')*/

@@ -326,11 +326,11 @@ SUBSYSTEM_DEF(treasury)
 		if(taxation_cat_settings[category]["taxAmount"] != categories[category]["taxAmount"])
 			if(categories[category]["taxAmount"] > taxation_cat_settings[category]["taxAmount"])
 				bad_guy = TRUE
-			final_text += "<br>[category] tax: [categories[category]["taxAmount"]]%. "
+			final_text += "<br>Налог на [category]: [categories[category]["taxAmount"]]%. "
 		if(taxation_cat_settings[category]["fineExemption"] != categories[category]["fineExemption"])
 			if(taxation_cat_settings[category]["fineExemption"] && !categories[category]["fineExemption"])
 				bad_guy = TRUE
-			final_text += "[category] is [categories[category]["fineExemption"] ? "now exempt from fines" : "no longer exempt from fines"]."
+			final_text += "[category] [categories[category]["fineExemption"] ? "теперь освобождён от штрафов" : "больше не освобождён от штрафов"]."
 		taxation_cat_settings[category] = categories[category]
 
 	if(isnull(final_text))

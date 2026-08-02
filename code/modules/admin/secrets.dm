@@ -116,7 +116,7 @@
 			set_station_name(new_name)
 			log_admin("[key_name(usr)] renamed the station to \"[new_name]\".")
 			message_admins("<span class='adminnotice'>[key_name_admin(usr)] renamed the station to: [new_name].</span>")
-			priority_announce("[command_name()] has renamed the station to \"[new_name]\".")
+			priority_announce("[command_name()] переименовал поселение в \"[new_name]\".")
 		if("night_shift_set")
 			if(!check_rights(R_ADMIN))
 				return
@@ -142,7 +142,7 @@
 			set_station_name(new_name)
 			log_admin("[key_name(usr)] reset the station name.")
 			message_admins("<span class='adminnotice'>[key_name_admin(usr)] reset the station name.</span>")
-			priority_announce("[command_name()] has renamed the station to \"[new_name]\".")
+			priority_announce("[command_name()] переименовал поселение в \"[new_name]\".")
 
 		if("list_bombers")
 			if(!check_rights(R_ADMIN))
@@ -282,9 +282,9 @@
 			SSeconomy.full_ancap = !SSeconomy.full_ancap
 			message_admins("[key_name_admin(usr)] toggled Anarcho-capitalist mode")
 			if(SSeconomy.full_ancap)
-				priority_announce("The NAP is now in full effect.", null, 'sound/blank.ogg')
+				priority_announce("Перемирие вступило в силу.", null, 'sound/blank.ogg')
 			else
-				priority_announce("The NAP has been revoked.", null, 'sound/blank.ogg')
+				priority_announce("Перемирие отменено.", null, 'sound/blank.ogg')
 
 		if("dorf")
 			if(!check_rights(R_FUN))

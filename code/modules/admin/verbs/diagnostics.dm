@@ -83,5 +83,6 @@
 		return
 
 	load_whitelist()
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Reload Whitelist") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Reload Whitelist")
 	message_admins("[key_name_admin(usr)] manually reloaded whitelist")
+	to_chat(src, span_notice("The whitelist is stored in the database and is checked live on each connection."))
